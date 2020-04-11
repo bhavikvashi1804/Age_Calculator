@@ -32,6 +32,8 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   Animation animation2;
   AnimationController animationController;
 
+  bool _isCal=false;
+
 
   @override
   void initState() {
@@ -139,6 +141,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                     fontStyle: FontStyle.italic),
               ),
             ),
+      
             AnimatedBuilder(
               animation: animation2,
               builder: (context, child) => new Text(
@@ -159,6 +162,8 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
 
   void calculateAge() {
     setState(() {
+
+      _isCal=true;
 
       final cDate = DateTime.now();
       int day2=cDate.day, day1=_selectedDate.day, 
